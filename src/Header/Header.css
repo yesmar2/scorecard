@@ -1,0 +1,19 @@
+.header {
+    height: 64px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.header > h2 {
+    flex: 1 0 auto;
+    margin: 0;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+.header > .material-icons {
+    font-size: 2rem;
+}
