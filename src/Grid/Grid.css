@@ -1,0 +1,47 @@
+.grid-wrapper {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+}
+
+.grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-gap: 1rem;
+}
+
+.top-left {
+    font-size: 2em;
+    grid-row: 1 / 7;
+    grid-column: 1 / 7;
+}
+
+.top-middle {
+    font-size: 1.2em;
+    grid-row: 1 / 5;
+    grid-column: 7 / 11;
+}
+
+.middle {
+    font-size: 3em;
+    grid-row: 5 / 13;
+    grid-column: 5 / 13;
+}
+
+.bottom-middle {
+    font-size: 1.2em;
+    grid-row: 13 / 17;
+    grid-column: 7 / 11;
+}
+
+.bottom-right {
+    font-size: 2em;
+    grid-row: 11 / 17;
+    grid-column: 11 / 17;
+}
