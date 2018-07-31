@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import Grid from "./Grid";
 import Header from "./Header";
+import Scorecard from "./Scorecard";
+import Grid from "./Grid";
 import "./App.css";
 
 class App extends Component {
     render() {
         return (
             <div className="app">
+                <Scorecard />
                 <Header />
                 <div className="main">
                     <Grid />
