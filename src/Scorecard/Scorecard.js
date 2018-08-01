@@ -1,9 +1,18 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import "./Scorecard.css";
 
 class Scorecard extends Component {
     constructor(props) {
         super(props);
+
+        this.refCallback = this.refCallback.bind(this);
+    }
+
+    refCallback(element) {
+        if (element) {
+            this.props.dispatch(setScorePositionAction(element.getBoundingClientRect()));
+        }
     }
 
     render() {
@@ -26,16 +35,20 @@ class Scorecard extends Component {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>5</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>6</td>
-                            <td>4</td>
+                            <td>
+                                <div ref={this.refCallback} style={{ opacity: 0 }}>
+                                    1
+                                </div>
+                            </td>
                             <td />
                             <td />
                             <td />
-                            <td>30</td>
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
                         </tr>
                     </tbody>
                 </table>
@@ -43,4 +56,12 @@ class Scorecard extends Component {
         );
     }
 }
+
+const setScorePositionAction = scorePosition => ({
+    type: "SET_SCORE_POSITION",
+    scorePosition
+});
+
+Scorecard = connect()(Scorecard);
+
 export default Scorecard;

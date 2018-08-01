@@ -28,10 +28,34 @@
     grid-column: 7 / 11;
 }
 
+.top-right {
+    font-size: 2em;
+    grid-row: 1 / 7;
+    grid-column: 11 / 17;
+}
+
+.middle-left {
+    font-size: 1.2em;
+    grid-row: 7 / 11;
+    grid-column: 1 / 5;
+}
+
 .middle {
     font-size: 3em;
     grid-row: 5 / 13;
     grid-column: 5 / 13;
+}
+
+.middle-right {
+    font-size: 1.2em;
+    grid-row: 7 / 11;
+    grid-column: 13 / 17;
+}
+
+.bottom-left {
+    font-size: 2em;
+    grid-row: 11 / 17;
+    grid-column: 1 / 7;
 }
 
 .bottom-middle {

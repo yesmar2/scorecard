@@ -8,7 +8,7 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                <Scorecard />
+                {/* <Scorecard /> */}
                 <Header />
                 <div className="main">
                     <Grid />
