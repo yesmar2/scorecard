@@ -3,16 +3,24 @@
     height: 250px;
     width: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, 0.7);
-    background: linear-gradient(rgba(120, 209, 107, 0.9), rgba(120, 209, 107, 0.9)),
-        url(../images/golfer-1960998_1920.jpg) no-repeat center top fixed;
+    background: linear-gradient(rgb(53, 228, 101, 0.9), rgb(41, 191, 92, 0.9)),
+        url(../images/golfer-1960998_1920.jpg) no-repeat center/cover;
+}
+
+.main {
+    width: 80vw;
+    font-size: 5vw;
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .header > h2 {
-    flex: 1 0 auto;
-    margin: 0;
-    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.6rem;
     text-align: center;
     font-weight: normal;
 }
@@ -21,9 +29,50 @@
     font-size: 2rem;
 }
 
+.hole-info {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hole-info > div {
+    width: 100px;
+}
+
+.hole-info h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+.hole-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+.hole-stat-value {
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.hole-stat-description {
+    text-align: center;
+}
+
 svg {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 100px;
+}
+
+@media screen and (orientation: landscape) {
+    .hole-info {
+        width: 60vh;
+    }
 }
