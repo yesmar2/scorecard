@@ -81,7 +81,8 @@ class Circle extends Component {
                     }}
                     onClick={this.selected}
                 >
-                    {this.props.value}
+                    <div>{this.props.title}</div>
+                    <div>{this.props.description}</div>
                 </Animated.div>
             </div>
         );

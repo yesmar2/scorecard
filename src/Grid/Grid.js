@@ -11,15 +11,15 @@ class Grid extends Component {
         return (
             <div className="grid-wrapper">
                 <div className="grid">
-                    <Circle value="1" gridLocation="top-left" />
-                    <Circle value="2" gridLocation="top-right" />
-                    <Circle value="3" gridLocation="top-middle" />
-                    <Circle value="4" gridLocation="middle-left" />
-                    <Circle value="5" gridLocation="middle" />
-                    <Circle value="6" gridLocation="middle-right" />
-                    <Circle value="7" gridLocation="bottom-left" />
-                    <Circle value="8" gridLocation="bottom-middle" />
-                    <Circle value="9" gridLocation="bottom-right" />
+                    <Circle title="Birdie" description="3" gridLocation="top-left" />
+                    <Circle title="Eagle" description="2" gridLocation="top-middle" />
+                    <Circle title="Bogie" description="5" gridLocation="top-right" />
+                    <Circle title="Snowman" description="8" gridLocation="middle-left" />
+                    <Circle title="Max" description="9" gridLocation="middle-right" />
+                    {/* <Circle title="Double Bogie" description="6" gridLocation="bottom-left" /> */}
+                    <Circle title="Hole in 1" description="1" gridLocation="bottom-middle" />
+                    {/* <Circle title="Triple Bogie" description="7" gridLocation="bottom-right" /> */}
+                    <Circle title="Par" description="4" gridLocation="middle" />
                 </div>
             </div>
         );

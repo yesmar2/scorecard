@@ -1,14 +1,26 @@
 .circle {
     height: 100%;
     border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.9);
     /* background: url("../images/golfball.jpg");
     background-size: 100px 100px;
     opacity: 0.2; */
-    /* background-color: rgba(255, 255, 255, 0.1); */
-    font-weight: 100;
+    background-color: rgb(59, 219, 133);
+    font-weight: normal;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+.circle > div:last-child {
+    margin-top: 0.3em;
+    font-size: 0.8em;
+}
+
+.middle > .circle {
+    background: #f4f7f8;
+    color: rgb(59, 219, 133);
 }
