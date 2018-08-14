@@ -10,7 +10,7 @@ class Circle extends Component {
         this.state = {
             animateX: new Animated.Value(0),
             animateY: new Animated.Value(0),
-            animateScale: new Animated.Value(0),
+            // animateScale: new Animated.Value(0),
             rect: null
         };
 
@@ -19,8 +19,8 @@ class Circle extends Component {
     }
 
     selected() {
-        const xTranslate = this.props.scorePosition[0].scorePosition.left - this.state.rect.left;
-        const yTranslate = this.props.scorePosition[0].scorePosition.top - this.state.rect.top;
+        const xTranslate = 100 - this.state.rect.left;
+        const yTranslate = 100 - this.state.rect.top;
 
         Animated.parallel([
             Animated.spring(this.state.animateX, {
@@ -30,11 +30,11 @@ class Circle extends Component {
             Animated.spring(this.state.animateY, {
                 toValue: yTranslate,
                 tension: 0.1
-            }),
-            Animated.spring(this.state.animateScale, {
-                toValue: 1,
-                tension: 0.1
             })
+            // Animated.spring(this.state.animateScale, {
+            //     toValue: 1,
+            //     tension: 0.1
+            // })
         ]).start();
     }
 
@@ -47,6 +47,8 @@ class Circle extends Component {
     }
 
     render() {
+        const { title, description, scoreColor } = this.props;
+
         return (
             <div className={this.props.gridLocation} ref={this.refCallback}>
                 <Animated.div
@@ -54,13 +56,13 @@ class Circle extends Component {
                     style={{
                         transform: [
                             { translateX: this.state.animateX },
-                            { translateY: this.state.animateY },
-                            {
-                                scale: this.state.animateScale.interpolate({
-                                    inputRange: [0, 0.75, 0.9, 0.95, 1],
-                                    outputRange: [1, 4, 0.5, 0.75, 0.25]
-                                })
-                            }
+                            { translateY: this.state.animateY }
+                            // {
+                            //     scale: this.state.animateScale.interpolate({
+                            //         inputRange: [0, 0.75, 0.9, 0.95, 1],
+                            //         outputRange: [1, 4, 0.5, 0.75, 0.25]
+                            //     })
+                            // }
                         ]
                         // borderRadius: animateBorderRadius.interpolate({
                         //     inputRange: [0, 1],
@@ -81,8 +83,8 @@ class Circle extends Component {
                     }}
                     onClick={this.selected}
                 >
-                    <div>{this.props.title}</div>
-                    <div>{this.props.description}</div>
+                    <div>{title}</div>
+                    <div className={`score ${scoreColor}`}>{description}</div>
                 </Animated.div>
             </div>
         );

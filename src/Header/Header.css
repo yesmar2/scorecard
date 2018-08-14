@@ -6,8 +6,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgb(38, 222, 129, 0.9), rgb(38, 222, 129, 0.9)),
-        url(../images/golfer-1960998_1920.jpg) no-repeat center 20% / cover;
+    /* background: linear-gradient(rgb(38, 222, 129, 0.9), rgb(38, 222, 129, 0.9)),
+        url(../images/golfer-1960998_1920.jpg) no-repeat center 20% / cover; */
 }
 
 .main {

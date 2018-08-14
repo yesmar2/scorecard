@@ -4,7 +4,9 @@
     /* background: linear-gradient(rgba(120, 209, 107, 0.9), rgba(120, 209, 107, 0.9)),
         url(./images/golfer-1960998_1920.jpg) no-repeat center top fixed; */
     /* background-size: cover; */
-    background: #f4f7f8;
+    background: linear-gradient(rgb(38, 222, 129, 0.9), rgb(38, 222, 129, 0.9)),
+        url(./images/golfer-1960998_1920.jpg) no-repeat center 20% / cover;
+    /* background: #f4f7f8; */
     overflow: hidden;
     display: flex;
     flex-direction: column;

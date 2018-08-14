@@ -25,12 +25,12 @@ class Header extends Component {
                         <div className="hole-stat-description">S. Index</div>
                     </div>
                 </section>
-                <svg x="0px" y="0px" viewBox="0 0 500 250" enableBackground="new 0 0 500 250" preserveAspectRatio="none">
+                {/* <svg x="0px" y="0px" viewBox="0 0 500 250" enableBackground="new 0 0 500 250" preserveAspectRatio="none">
                     <path
                         fill="#f4f7f8"
                         d="M250,246.5c-97.85,0-186.344-40.044-250-104.633V250h500V141.867C436.344,206.456,347.85,246.5,250,246.5z"
                     />
-                </svg>
+                </svg> */}
                 {/* <i className="material-icons">keyboard_arrow_right</i> */}
             </header>
         );
