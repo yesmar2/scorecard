@@ -1,14 +1,10 @@
 .hole {
-    height: 400px;
-    width: 400px;
+    height: 800px;
+    width: 800px;
     position: absolute;
-    background-color: black;
+    background-color: #444;
     top: -400px;
     left: -400px;
     border-radius: 50%;
-    transition: ;
-}
-
-.hole-expanded {
-    height: 800px;
+    box-shadow: -72px 63px 45px 39px black inset;
 }

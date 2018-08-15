@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Animated from "animated/lib/targets/react-dom";
+import enterScore from "../actions/enterScore";
 import "./Ball.css";
 
 class Ball extends Component {
@@ -10,6 +11,7 @@ class Ball extends Component {
         this.state = {
             animateX: new Animated.Value(0),
             animateY: new Animated.Value(0),
+            scale: new Animated.Value(1),
             rect: null
         };
 
@@ -18,17 +20,22 @@ class Ball extends Component {
     }
 
     selected() {
+        this.props.enterScore(1, 5);
+
         const xTranslate = -this.state.rect.left;
         const yTranslate = -this.state.rect.top;
 
-        Animated.parallel([
-            Animated.spring(this.state.animateX, {
-                toValue: xTranslate,
-                tension: 0.1
-            }),
-            Animated.spring(this.state.animateY, {
-                toValue: yTranslate,
-                tension: 0.1
+        Animated.sequence([
+            Animated.parallel([
+                Animated.timing(this.state.animateX, {
+                    toValue: xTranslate
+                }),
+                Animated.timing(this.state.animateY, {
+                    toValue: yTranslate
+                })
+            ]),
+            Animated.timing(this.state.scale, {
+                toValue: 0
             })
         ]).start();
     }
@@ -49,7 +56,7 @@ class Ball extends Component {
                 <Animated.div
                     className="ball"
                     style={{
-                        transform: [{ translateX: this.state.animateX }, { translateY: this.state.animateY }]
+                        transform: [{ translateX: this.state.animateX }, { translateY: this.state.animateY }, { scale: this.state.scale }]
                         // zIndex: zIndex
                     }}
                     onClick={this.selected}
@@ -66,6 +73,11 @@ const mapStateToProps = state => ({
     scorePosition: state.scorePosition
 });
 
-Ball = connect(mapStateToProps)(Ball);
+const mapDispatchToProps = dispatch => ({
+    enterScore: (hole, score) => dispatch(enterScore(hole, score))
+});
 
-export default Ball;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Ball);

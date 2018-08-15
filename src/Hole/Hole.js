@@ -1,17 +1,43 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Animated from "animated/lib/targets/react-dom";
 import "./Hole.css";
 
 class Hole extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            scale: new Animated.Value(0)
+        };
+    }
+
+    componentDidUpdate() {
+        Animated.sequence([
+            Animated.timing(this.state.scale, {
+                toValue: 1
+            }),
+            Animated.timing(this.state.scale, {
+                toValue: 0,
+                delay: 500
+            })
+        ]).start();
     }
 
     render() {
-        return <div className="hole" />;
+        return (
+            <Animated.div
+                className="hole"
+                style={{
+                    transform: [{ scale: this.state.scale }]
+                }}
+            />
+        );
     }
 }
 
-Hole = connect()(Hole);
+const mapStateToProps = state => ({
+    golfRound: state.golfRound
+});
 
-export default Hole;
+export default connect(mapStateToProps)(Hole);
