@@ -17,25 +17,25 @@
 }
 
 .top-left {
-    font-size: 0.5em;
+    font-size: 0.6em;
     grid-row: 3 / 7;
     grid-column: 3 / 7;
 }
 
 .top-middle {
-    font-size: 0.5em;
+    font-size: 0.6em;
     grid-row: 1 / 5;
     grid-column: 7 / 11;
 }
 
 .top-right {
-    font-size: 0.5em;
+    font-size: 0.6em;
     grid-row: 3 / 7;
     grid-column: 11 / 15;
 }
 
 .middle-left {
-    font-size: 0.5em;
+    font-size: 0.6em;
     grid-row: 7 / 11;
     grid-column: 1 / 5;
 }
@@ -47,25 +47,25 @@
 }
 
 .middle-right {
-    font-size: 0.5em;
+    font-size: 0.6em;
     grid-row: 7 / 11;
     grid-column: 13 / 17;
 }
 
 .bottom-left {
-    font-size: 0.5em;
+    font-size: 0.6em;
     grid-row: 11 / 15;
     grid-column: 3 / 7;
 }
 
 .bottom-middle {
-    font-size: 0.5em;
+    font-size: 0.6em;
     grid-row: 13 / 17;
     grid-column: 7 / 11;
 }
 
 .bottom-right {
-    font-size: 0.5em;
+    font-size: 0.6em;
     grid-row: 11 / 15;
     grid-column: 11 / 15;
 }

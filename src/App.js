@@ -9,7 +9,7 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                <Hole />
+                {/* <Hole /> */}
                 {/* <Scorecard /> */}
                 <Header />
                 <div className="main">

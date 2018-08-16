@@ -12,7 +12,9 @@ class Ball extends Component {
             animateX: new Animated.Value(0),
             animateY: new Animated.Value(0),
             scale: new Animated.Value(1),
-            rect: null
+            rect: null,
+            scoreEntered: false,
+            zIndex: 0
         };
 
         this.selected = this.selected.bind(this);
@@ -21,21 +23,29 @@ class Ball extends Component {
 
     selected() {
         this.props.enterScore(1, 5);
+        this.setState({ scoreEntered: true, zIndex: 1 });
 
         const xTranslate = -this.state.rect.left;
         const yTranslate = -this.state.rect.top;
 
-        Animated.sequence([
+        Animated.stagger(201, [
             Animated.parallel([
                 Animated.timing(this.state.animateX, {
-                    toValue: xTranslate
+                    toValue: -100,
+                    duration: 200
                 }),
                 Animated.timing(this.state.animateY, {
-                    toValue: yTranslate
+                    toValue: -150,
+                    duration: 300
+                }),
+                Animated.timing(this.state.scale, {
+                    toValue: 0.4,
+                    duration: 200
                 })
             ]),
             Animated.timing(this.state.scale, {
-                toValue: 0
+                toValue: 20,
+                duration: 400
             })
         ]).start();
     }
@@ -50,19 +60,19 @@ class Ball extends Component {
 
     render() {
         const { scoreTerm, score, scoreColor } = this.props;
+        const { scoreEntered, zIndex } = this.state;
 
         return (
             <div ref={this.refCallback} style={{ height: "100%" }}>
                 <Animated.div
                     className="ball"
                     style={{
-                        transform: [{ translateX: this.state.animateX }, { translateY: this.state.animateY }, { scale: this.state.scale }]
-                        // zIndex: zIndex
+                        transform: [{ translateX: this.state.animateX }, { translateY: this.state.animateY }, { scale: this.state.scale }],
+                        zIndex: zIndex
                     }}
                     onClick={this.selected}
                 >
-                    <div>{scoreTerm}</div>
-                    <div className={`score ${scoreColor}`}>{score}</div>
+                    {!scoreEntered && [<div>{scoreTerm}</div>, <div className={`score ${scoreColor}`}>{score}</div>]}
                 </Animated.div>
             </div>
         );
