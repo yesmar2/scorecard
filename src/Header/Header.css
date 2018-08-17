@@ -1,10 +1,9 @@
 .header-container {
     display: flex;
     justify-content: center;
-    height: 250px;
-    width: 120%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
+    height: 120vh;
+    width: 30vw;
+    border-radius: 0 50% 50% 0;
     background: rgba(0, 0, 0, 0.2);
 }
 
@@ -79,5 +78,13 @@
 @media screen and (orientation: landscape) {
     .hole-info {
         width: 60vh;
+    }
+}
+
+@media (min-height: 600px) {
+    .header-container {
+        height: 30vh;
+        width: 120%;
+        border-radius: 0 0 50% 50%;
     }
 }

@@ -1,6 +1,6 @@
 .grid-wrapper {
-    width: 100%;
-    padding-top: 100%;
+    width: 90vw;
+    padding-top: 90vw;
     position: relative;
 }
 
@@ -14,6 +14,7 @@
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
     grid-gap: 1rem;
+    font-size: 5vmin;
 }
 
 .top-left {
@@ -68,4 +69,22 @@
     font-size: 0.6em;
     grid-row: 11 / 15;
     grid-column: 11 / 15;
+}
+
+@media (min-width: 550px) {
+    .grid-wrapper {
+        width: 90vh;
+        padding-top: 90vh;
+    }
+}
+
+@media (min-height: 600px) and (min-width: 550px) {
+    .grid-wrapper {
+        width: 60vh;
+        padding-top: 60vh;
+    }
+
+    .grid {
+        font-size: 4vmin;
+    }
 }

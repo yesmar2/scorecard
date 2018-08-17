@@ -4,21 +4,18 @@
         url(./images/golfer-1960998_1920.jpg) no-repeat center 20% / cover;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
 .main {
-    width: 90vw;
-    font-size: 6vw;
     flex: 1 0 auto;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-@media screen and (orientation: landscape) {
-    .main {
-        width: 60vh;
-        font-size: 4vh;
+@media (min-height: 600px) {
+    .app {
+        flex-direction: column;
     }
 }
