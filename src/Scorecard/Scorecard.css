@@ -5,7 +5,7 @@
     bottom: 0;
     left: 0px;
     background: #fff;
-    transform: translateX(-100vw);
+    transform: translateX(100vw);
     transition: transform 0.5s;
     transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
     z-index: 1;
@@ -13,6 +13,20 @@
 
 .scorecard.open {
     transform: translateX(0);
+}
+
+.close-icon {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: inherit;
+    border: 0;
+    padding: 0;
+    outline: 0;
+    color: inherit;
+    background: none;
+    cursor: pointer;
 }
 
 .scorecard table {

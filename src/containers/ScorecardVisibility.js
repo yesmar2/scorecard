@@ -1,8 +1,16 @@
 import { connect } from "react-redux";
+import setScorecardVisibility from "../actions/setScorecardVisibility";
 import Scorecard from "../Scorecard";
 
 const mapStateToProps = state => ({
     scorecardVisibility: state.scorecardVisibility
 });
 
-export default connect(mapStateToProps)(Scorecard);
+const mapDispatchToProps = dispatch => ({
+    setScorecardVisibility: visibility => dispatch(setScorecardVisibility(visibility))
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Scorecard);

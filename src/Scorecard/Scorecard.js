@@ -7,10 +7,13 @@ class Scorecard extends Component {
     }
 
     render() {
-        const { scorecardVisibility } = this.props;
+        const { scorecardVisibility, setScorecardVisibility } = this.props;
         return (
             <div className={`scorecard ${scorecardVisibility}`}>
-                <table cellPadding="0" cellSpacing="0">
+                <button className=" close-icon" onClick={() => this.props.setScorecardVisibility("closed")}>
+                    <i className="material-icons">close</i>
+                </button>
+                {/* <table cellPadding="0" cellSpacing="0">
                     <thead>
                         <tr>
                             <td>1</td>
@@ -43,7 +46,7 @@ class Scorecard extends Component {
                             <td />
                         </tr>
                     </tbody>
-                </table>
+                </table> */}
             </div>
         );
     }
