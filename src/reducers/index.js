@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import scorePosition from "./scorePosition";
+import scorecardVisibility from "./scorecardVisibility";
 import golfRound from "./golfRound";
 
 export default combineReducers({
-    scorePosition,
+    scorecardVisibility,
     golfRound
 });

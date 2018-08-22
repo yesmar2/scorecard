@@ -72,22 +72,23 @@ class Ball extends Component {
                     }}
                     onClick={this.selected}
                 >
-                    {!scoreEntered && [<div>{scoreTerm}</div>, <div className={`score ${scoreColor}`}>{score}</div>]}
+                    {!scoreEntered && [
+                        <div key={0}>{scoreTerm}</div>,
+                        <div className={`score ${scoreColor}`} key={1}>
+                            {score}
+                        </div>
+                    ]}
                 </Animated.div>
             </div>
         );
     }
 }
 
-const mapStateToProps = state => ({
-    scorePosition: state.scorePosition
-});
-
 const mapDispatchToProps = dispatch => ({
     enterScore: (hole, score) => dispatch(enterScore(hole, score))
 });
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
 )(Ball);

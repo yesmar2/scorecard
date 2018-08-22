@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import setScorecardVisibility from "../actions/setScorecardVisibility";
 import "./Header.css";
 
 class Header extends Component {
@@ -8,7 +10,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div class="header-container">
+            <div className="header-container">
                 <header className="header">
                     <i className="material-icons menu-icon">menu</i>
                     <h2>Bemus Point Golf Course</h2>
@@ -28,10 +30,20 @@ class Header extends Component {
                         </div>
                         <i className="material-icons">keyboard_arrow_right</i>
                     </section>
-                    <i className="material-icons scorecard-icon">view_list</i>
+                    <button className="over-under" onClick={() => this.props.setScorecardVisibility("open")}>
+                        +2
+                    </button>
                 </header>
             </div>
         );
     }
 }
-export default Header;
+
+const mapDispatchToProps = dispatch => ({
+    setScorecardVisibility: visibility => dispatch(setScorecardVisibility(visibility))
+});
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(Header);

@@ -1,23 +1,15 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import "./Scorecard.css";
 
 class Scorecard extends Component {
     constructor(props) {
         super(props);
-
-        this.refCallback = this.refCallback.bind(this);
-    }
-
-    refCallback(element) {
-        if (element) {
-            this.props.dispatch(setScorePositionAction(element.getBoundingClientRect()));
-        }
     }
 
     render() {
+        const { scorecardVisibility } = this.props;
         return (
-            <div className="scorecard">
+            <div className={`scorecard ${scorecardVisibility}`}>
                 <table cellPadding="0" cellSpacing="0">
                     <thead>
                         <tr>
@@ -56,12 +48,5 @@ class Scorecard extends Component {
         );
     }
 }
-
-const setScorePositionAction = scorePosition => ({
-    type: "SET_SCORE_POSITION",
-    scorePosition
-});
-
-Scorecard = connect()(Scorecard);
 
 export default Scorecard;
