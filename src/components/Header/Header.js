@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import setScorecardVisibility from "../actions/setScorecardVisibility";
+import setScorecardVisibility from "../../actions/setScorecardVisibility";
 import "./Header.css";
 
 class Header extends Component {

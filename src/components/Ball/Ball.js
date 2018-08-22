@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Animated from "animated/lib/targets/react-dom";
-import enterScore from "../actions/enterScore";
+import enterScore from "../../actions/enterScore";
 import "./Ball.css";
 
 class Ball extends Component {

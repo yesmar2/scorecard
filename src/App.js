@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Header from "./Header";
-import Grid from "./Grid";
+import Header from "./components/Header";
+import Grid from "./components/Grid";
 import ScorecardVisibility from "./containers/ScorecardVisibility";
 import "./App.css";
 
