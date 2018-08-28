@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import setScorecardVisibility from "../actions/setScorecardVisibility";
-import Scorecard from "../Scorecard";
+import Scorecard from "../components/Scorecard";
 
 const mapStateToProps = state => ({
     scorecardVisibility: state.scorecardVisibility

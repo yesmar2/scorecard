@@ -2,10 +2,10 @@
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
     left: 0px;
+    height: 200px;
     background: #fff;
-    transform: translateX(100vw);
+    transform: translateY(-200px);
     transition: transform 0.5s;
     transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
     z-index: 1;

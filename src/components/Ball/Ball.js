@@ -12,21 +12,16 @@ class Ball extends Component {
             animateX: new Animated.Value(0),
             animateY: new Animated.Value(0),
             scale: new Animated.Value(1),
-            rect: null,
             scoreEntered: false,
             zIndex: 0
         };
 
         this.selected = this.selected.bind(this);
-        this.refCallback = this.refCallback.bind(this);
     }
 
     selected() {
         this.props.enterScore(1, 5);
         this.setState({ scoreEntered: true, zIndex: 1 });
-
-        const xTranslate = -this.state.rect.left;
-        const yTranslate = -this.state.rect.top;
 
         Animated.stagger(201, [
             Animated.parallel([
@@ -50,36 +45,26 @@ class Ball extends Component {
         ]).start();
     }
 
-    refCallback(element) {
-        if (element) {
-            this.setState({
-                rect: element.getBoundingClientRect()
-            });
-        }
-    }
-
     render() {
-        const { scoreTerm, score, scoreColor } = this.props;
+        const { scoreTerm, score, scoreColor, size } = this.props;
         const { scoreEntered, zIndex } = this.state;
 
         return (
-            <div ref={this.refCallback} style={{ height: "100%" }}>
-                <Animated.div
-                    className="ball"
-                    style={{
-                        transform: [{ translateX: this.state.animateX }, { translateY: this.state.animateY }, { scale: this.state.scale }],
-                        zIndex: zIndex
-                    }}
-                    onClick={this.selected}
-                >
-                    {!scoreEntered && [
-                        <div key={0}>{scoreTerm}</div>,
-                        <div className={`score ${scoreColor}`} key={1}>
-                            {score}
-                        </div>
-                    ]}
-                </Animated.div>
-            </div>
+            <Animated.div
+                className={`ball ${size}`}
+                style={{
+                    transform: [{ translateX: this.state.animateX }, { translateY: this.state.animateY }, { scale: this.state.scale }],
+                    zIndex: zIndex
+                }}
+                onClick={this.selected}
+            >
+                {!scoreEntered && [
+                    <div key={0}>{scoreTerm}</div>,
+                    <div className={`score ${scoreColor}`} key={1}>
+                        {score}
+                    </div>
+                ]}
+            </Animated.div>
         );
     }
 }

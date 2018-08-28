@@ -10,9 +10,7 @@ class App extends Component {
             <div className="app">
                 <ScorecardVisibility />
                 <Header />
-                <div className="main">
-                    <Grid />
-                </div>
+                <Grid />
             </div>
         );
     }

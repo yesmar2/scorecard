@@ -15,52 +15,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, 0.8);
 }
 
-.header > h2 {
-    color: rgba(255, 255, 255, 0.9);
+.header > h1 {
     font-size: 1.6rem;
     text-align: center;
     font-weight: normal;
-}
-
-.hole-info {
-    width: 90vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hole-info .material-icons {
-    font-size: 3rem;
-}
-
-.hole-info > div {
-    width: 100px;
-}
-
-.hole-info h3 {
-    margin: 0;
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: normal;
-}
-
-.hole-info p {
-    margin: 0;
-    font-size: 0.9rem;
-    text-align: center;
-    font-weight: normal;
-}
-
-.hole-stat-value {
-    text-align: center;
-    font-size: 2.2rem;
-}
-
-.hole-stat-description {
-    text-align: center;
 }
 
 .menu-icon {
@@ -81,12 +41,6 @@
     color: inherit;
     background: none;
     cursor: pointer;
-}
-
-@media screen and (orientation: landscape) {
-    .hole-info {
-        width: 60vh;
-    }
 }
 
 @media (min-height: 600px) {

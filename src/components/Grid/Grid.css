@@ -1,90 +1,115 @@
-.grid-wrapper {
+.main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 90vw;
-    padding-top: 90vw;
-    position: relative;
 }
 
-.grid {
+.hole-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 auto;
+}
+
+.hole-info .material-icons {
+    font-size: 3rem;
+}
+
+.hole-info > div {
+    width: 100px;
+}
+
+.hole-info h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+.hole-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+.hole-stat-value {
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.hole-stat-description {
+    text-align: center;
+}
+
+.scoring-container {
+    position: relative;
+    padding-top: 75%;
+    width: 100%;
+}
+
+.score-entry {
+    position: absolute;
+    margin: 5%;
+    width: 40%;
+    padding-top: 40%;
+    bottom: 0;
+    left: 25%;
+}
+
+.score-entry > .center {
     position: absolute;
     top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
-    grid-gap: 1rem;
-    font-size: 5vmin;
+    height: 100%;
+    width: 100%;
 }
 
-.top-left {
-    font-size: 0.6em;
-    grid-row: 3 / 7;
-    grid-column: 3 / 7;
+.score-entry > .center > .ball-wrapper {
+    position: absolute;
+    top: -75%;
+    left: 50%;
+    height: 50%;
+    width: 50%;
+    margin-left: -25%;
 }
 
-.top-middle {
-    font-size: 0.6em;
-    grid-row: 1 / 5;
-    grid-column: 7 / 11;
+.center.top-right {
+    transform: rotate(45deg);
 }
 
-.top-right {
-    font-size: 0.6em;
-    grid-row: 3 / 7;
-    grid-column: 11 / 15;
+.center.top-right > .ball-wrapper {
+    transform: rotate(-45deg);
 }
 
-.middle-left {
-    font-size: 0.6em;
-    grid-row: 7 / 11;
-    grid-column: 1 / 5;
+.center.right {
+    transform: rotate(90deg);
 }
 
-.middle {
-    font-size: 0.8em;
-    grid-row: 6 / 12;
-    grid-column: 6 / 12;
+.center.right > .ball-wrapper {
+    transform: rotate(-90deg);
 }
 
-.middle-right {
-    font-size: 0.6em;
-    grid-row: 7 / 11;
-    grid-column: 13 / 17;
+.center.left {
+    transform: rotate(-90deg);
 }
 
-.bottom-left {
-    font-size: 0.6em;
-    grid-row: 11 / 15;
-    grid-column: 3 / 7;
+.center.left > .ball-wrapper {
+    transform: rotate(90deg);
 }
 
-.bottom-middle {
-    font-size: 0.6em;
-    grid-row: 13 / 17;
-    grid-column: 7 / 11;
+.center.top-left {
+    transform: rotate(-45deg);
 }
 
-.bottom-right {
-    font-size: 0.6em;
-    grid-row: 11 / 15;
-    grid-column: 11 / 15;
+.center.top-left > .ball-wrapper {
+    transform: rotate(45deg);
 }
 
-@media (min-width: 550px) {
-    .grid-wrapper {
-        width: 90vh;
-        padding-top: 90vh;
-    }
-}
-
-@media (min-height: 600px) and (min-width: 550px) {
-    .grid-wrapper {
+@media screen and (orientation: landscape) {
+    .main {
         width: 60vh;
-        padding-top: 60vh;
-    }
-
-    .grid {
-        font-size: 4vmin;
     }
 }
