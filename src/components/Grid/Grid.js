@@ -16,13 +16,13 @@ class Grid extends Component {
                         <div className="hole-stat-value">4</div>
                         <div className="hole-stat-description">Par</div>
                     </div>
-                    <div>
+                    <div className="hole">
                         <h3>Hole 1</h3>
                         <p>365 yards</p>
                     </div>
                     <div className="hole-stat">
                         <div className="hole-stat-value">3</div>
-                        <div className="hole-stat-description">S. Index</div>
+                        <div className="hole-stat-description">Hcp</div>
                     </div>
                     <i className="material-icons">keyboard_arrow_right</i>
                 </section>
@@ -31,19 +31,9 @@ class Grid extends Component {
                         <div className="center">
                             <Ball scoreTerm="Par" score="4" scoreColor="green" size="big" />
                         </div>
-                        <div className="center top">
+                        <div className="center left">
                             <div className="ball-wrapper">
-                                <Ball scoreTerm="Birdie" score="3" scoreColor="green" />
-                            </div>
-                        </div>
-                        <div className="center top-right">
-                            <div className="ball-wrapper">
-                                <Ball scoreTerm="Birdie" score="3" scoreColor="green" />
-                            </div>
-                        </div>
-                        <div className="center right">
-                            <div className="ball-wrapper">
-                                <Ball scoreTerm="Birdie" score="3" scoreColor="green" />
+                                <Ball scoreTerm="Eagle" score="2" scoreColor="green" />
                             </div>
                         </div>
                         <div className="center top-left">
@@ -51,9 +41,19 @@ class Grid extends Component {
                                 <Ball scoreTerm="Birdie" score="3" scoreColor="green" />
                             </div>
                         </div>
-                        <div className="center left">
+                        <div className="center top">
                             <div className="ball-wrapper">
-                                <Ball scoreTerm="Birdie" score="3" scoreColor="green" />
+                                <Ball scoreTerm="Bogie" score="5" scoreColor="red" />
+                            </div>
+                        </div>
+                        <div className="center top-right">
+                            <div className="ball-wrapper">
+                                <Ball scoreTerm="D. Bogie" score="6" scoreColor="red" />
+                            </div>
+                        </div>
+                        <div className="center right">
+                            <div className="ball-wrapper">
+                                <Ball scoreTerm="T. Bogie" score="7" scoreColor="red" />
                             </div>
                         </div>
                     </div>
