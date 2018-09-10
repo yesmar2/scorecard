@@ -17,4 +17,4 @@ This is just the beginning stages of a golf scorecard progressive web applicatio
 
 ## Screenshots
 
-![Screenshot](https://github.com/yesmar2/system-load-monitor/blob/master/src/images/Mobile-Snapshot.PNG)
+![Screenshot](https://github.com/yesmar2/scorecard/blob/master/src/images/Mobile-Snapshot.PNG)
