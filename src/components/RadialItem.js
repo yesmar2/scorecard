@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const RadialItemRoot = styled.div`
+const RadialItemWrapper = styled.div`
     position: absolute;
     top: 0;
     height: 100%;
@@ -31,17 +31,17 @@ const RadialItem = props => {
         case "medium":
             size = "50%";
             break;
-        case "large":
+        default:
             size = "100%";
             break;
     }
 
     return (
-        <RadialItemRoot angle={angle}>
+        <RadialItemWrapper angle={angle}>
             <RadialItemPositioned angle={angle} size={size} distance={distance}>
                 {props.children}
             </RadialItemPositioned>
-        </RadialItemRoot>
+        </RadialItemWrapper>
     );
 };
 

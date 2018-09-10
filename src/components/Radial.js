@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-const RadialRoot = styled.div`
+const RadialWrapper = styled.div`
     position: relative;
     height: 100%;
     width: 100%;
@@ -30,11 +30,10 @@ class Radial extends Component {
     }
 
     render() {
-        const { centerSize } = this.props;
         return (
-            <RadialRoot>
+            <RadialWrapper>
                 <RadialHub>{this.renderChildrenWithParentProps()}</RadialHub>
-            </RadialRoot>
+            </RadialWrapper>
         );
     }
 }

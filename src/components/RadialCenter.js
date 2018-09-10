@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const RadiaCenterRoot = styled.div`
+const RadialCenterWrapper = styled.div`
     position: absolute;
     top: 0;
     height: 100%;
@@ -11,6 +11,6 @@ const RadiaCenterRoot = styled.div`
     justify-content: center;
 `;
 
-const RadialCenter = props => <RadiaCenterRoot>{props.children}</RadiaCenterRoot>;
+const RadialCenter = props => <RadialCenterWrapper>{props.children}</RadialCenterWrapper>;
 
 export default RadialCenter;
