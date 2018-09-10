@@ -14,3 +14,7 @@ This is just the beginning stages of a golf scorecard progressive web applicatio
 -   Only looks good in portrait mode for mobile devices. Need to work on responsiveness for larger devices as well as landscape.
 -   Add prop-types for type-checking
 -   Add unit and integration tests
+
+## Screenshots
+
+![Screenshot](https://github.com/yesmar2/system-load-monitor/blob/master/src/images/Mobile-Snapshot.PNG)
