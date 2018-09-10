@@ -5,8 +5,8 @@ import RadialItem from "./RadialItem";
 import styled, { css } from "styled-components";
 
 const GolfersWrapper = styled.div`
-    height: 120px;
-    width: 120px;
+    height: 20vh;
+    width: 20vh;
 `;
 
 const Golfer = styled.div`
@@ -18,8 +18,8 @@ const Golfer = styled.div`
     align-items: center;
     font-size: 2.2rem;
     font-weight: 300;
-    border: 20px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+    border: 3vh solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 3vh rgba(255, 255, 255, 0.1);
 
     ${props =>
         props.small &&
@@ -33,7 +33,7 @@ const Golfer = styled.div`
 
 const Golfers = () => (
     <GolfersWrapper>
-        <Radial itemSize="small" distance="65px">
+        <Radial itemSize="small" distance="11vh">
             <RadialCenter>
                 <Golfer>RJB</Golfer>
             </RadialCenter>
