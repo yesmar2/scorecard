@@ -6,7 +6,7 @@ const HoleInfoWrapper = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
+    flex: 1 0 auto;
 `;
 
 const Stat = styled.div`

@@ -4,6 +4,10 @@ import RadialCenter from "./RadialCenter";
 import RadialItem from "./RadialItem";
 import styled, { css } from "styled-components";
 
+const GolfersContainer = styled.div`
+    height: 30vh;
+`;
+
 const GolfersWrapper = styled.div`
     height: 20vh;
     width: 20vh;
@@ -32,22 +36,24 @@ const Golfer = styled.div`
 `;
 
 const Golfers = () => (
-    <GolfersWrapper>
-        <Radial itemSize="small" distance="11vh">
-            <RadialCenter>
-                <Golfer>RJB</Golfer>
-            </RadialCenter>
-            <RadialItem angle={155}>
-                <Golfer small>PAT</Golfer>
-            </RadialItem>
-            <RadialItem angle={180}>
-                <Golfer small>BC</Golfer>
-            </RadialItem>
-            <RadialItem angle={-155}>
-                <Golfer small>ROS</Golfer>
-            </RadialItem>
-        </Radial>
-    </GolfersWrapper>
+    <GolfersContainer>
+        <GolfersWrapper>
+            <Radial itemSize="small" distance="10vh">
+                <RadialCenter>
+                    <Golfer>RJB</Golfer>
+                </RadialCenter>
+                <RadialItem angle={155}>
+                    <Golfer small>PAT</Golfer>
+                </RadialItem>
+                <RadialItem angle={180}>
+                    <Golfer small>BC</Golfer>
+                </RadialItem>
+                <RadialItem angle={-155}>
+                    <Golfer small>ROS</Golfer>
+                </RadialItem>
+            </Radial>
+        </GolfersWrapper>
+    </GolfersContainer>
 );
 
 export default Golfers;
