@@ -61,16 +61,12 @@ Some table styling to start with:
 }
 */
 
-const Scorecard = props => {
-    const { scorecardVisibility, setScorecardVisibility } = props;
-
-    return (
-        <ScorecardWrapper visibility={scorecardVisibility}>
-            <CloseButton onClick={() => setScorecardVisibility("closed")}>
-                <i className="material-icons">close</i>
-            </CloseButton>
-        </ScorecardWrapper>
-    );
-};
+const Scorecard = ({ scorecardVisibility, setScorecardVisibility }) => (
+    <ScorecardWrapper visibility={scorecardVisibility}>
+        <CloseButton onClick={() => setScorecardVisibility("closed")}>
+            <i className="material-icons">close</i>
+        </CloseButton>
+    </ScorecardWrapper>
+);
 
 export default Scorecard;

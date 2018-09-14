@@ -1,12 +1,13 @@
 import React from "react";
-import Ball from "./Ball";
+import ScoreContainer from "../containers/ScoreContainer";
 import Radial from "./Radial";
 import RadialCenter from "./RadialCenter";
 import RadialItem from "./RadialItem";
+import createScoreAnimation from "../animations/score-animation";
 import styled from "styled-components";
 
-const ScoringContainer = styled.div`
-    height: 31vh;
+const ScoringRoot = styled.div`
+    height: 60vw;
     display: flex;
     align-items: flex-end;
 `;
@@ -15,44 +16,46 @@ const ScoringWrapper = styled.div`
     flex: 1 0 auto;
     display: flex;
     align-items: flex-end;
-    height: 16vh;
-    width: 16vh;
+    height: 35vw;
+    width: 35vw;
 `;
 
-const CenterBall = styled(Ball)`
+const AnimatedScore = createScoreAnimation(ScoreContainer);
+
+const CenterScore = styled(AnimatedScore)`
     font-size: 6vh;
     font-weight: 300;
 `;
 
-const OuterBall = styled(Ball)`
+const OuterScore = styled(AnimatedScore)`
     font-size: 3vh;
 `;
 
 const Scoring = () => (
-    <ScoringContainer>
+    <ScoringRoot>
         <ScoringWrapper>
-            <Radial itemSize="medium" distance="14vh">
+            <Radial itemSize="medium" distance="25vw">
                 <RadialCenter>
-                    <CenterBall scoreTerm="Par" score="4" />
+                    <CenterScore scoreTerm="Par" value={4} />
                 </RadialCenter>
                 <RadialItem angle={-90}>
-                    <OuterBall scoreTerm="Eagle" score="2" />
+                    <OuterScore scoreTerm="Eagle" value={2} />
                 </RadialItem>
                 <RadialItem angle={-45}>
-                    <OuterBall scoreTerm="Birdie" score="3" />
+                    <OuterScore scoreTerm="Birdie" value={3} />
                 </RadialItem>
                 <RadialItem angle={0}>
-                    <OuterBall scoreTerm="Bogie" score="5" />
+                    <OuterScore scoreTerm="Bogie" value={5} />
                 </RadialItem>
                 <RadialItem angle={45}>
-                    <OuterBall scoreTerm="D. Bogie" score="6" />
+                    <OuterScore scoreTerm="D. Bogie" value={6} />
                 </RadialItem>
                 <RadialItem angle={90}>
-                    <OuterBall scoreTerm="T. Bogie" score="7" />
+                    <OuterScore scoreTerm="T. Bogie" value={7} />
                 </RadialItem>
             </Radial>
         </ScoringWrapper>
-    </ScoringContainer>
+    </ScoringRoot>
 );
 
 export default Scoring;

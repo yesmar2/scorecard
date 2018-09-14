@@ -8,8 +8,8 @@ const MainWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    padding: 0 2rem 2rem 2rem;
+    width: 80vw;
+    padding-bottom: 5vw;
 `;
 
 const Main = () => (

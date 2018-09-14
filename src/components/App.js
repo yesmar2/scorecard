@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Header from "./components/Header";
-import Main from "./components/Main";
-import ScorecardVisibility from "./containers/ScorecardVisibility";
+import Header from "./Header";
+import Main from "./Main";
+import ScorecardContainer from "../containers/ScorecardContainer";
 import styled from "styled-components";
-import backgroundImage from "./images/golfer-1960998_1920.jpg";
+import backgroundImage from "../images/golfer-1960998_1920.jpg";
 
 const AppWrapper = styled.div`
     height: 100%;
@@ -19,7 +19,7 @@ class App extends Component {
     render() {
         return (
             <AppWrapper>
-                <ScorecardVisibility />
+                <ScorecardContainer />
                 <Header />
                 <Main />
             </AppWrapper>
