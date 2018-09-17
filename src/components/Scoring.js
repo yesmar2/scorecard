@@ -3,8 +3,12 @@ import ScoreContainer from "../containers/ScoreContainer";
 import Radial from "./Radial";
 import RadialCenter from "./RadialCenter";
 import RadialItem from "./RadialItem";
-import createScoreAnimation from "../animations/score-animation";
+import createRotateAnimation from "../animations/rotateAnimation";
+import createScoreAnimation from "../animations/scoreAnimation";
 import styled from "styled-components";
+
+const AnimatedRadialItem = createRotateAnimation(RadialItem);
+const AnimatedScore = createScoreAnimation(ScoreContainer);
 
 const ScoringRoot = styled.div`
     height: 60vw;
@@ -19,8 +23,6 @@ const ScoringWrapper = styled.div`
     height: 35vw;
     width: 35vw;
 `;
-
-const AnimatedScore = createScoreAnimation(ScoreContainer);
 
 const CenterScore = styled(AnimatedScore)`
     font-size: 6vh;
@@ -38,21 +40,21 @@ const Scoring = () => (
                 <RadialCenter>
                     <CenterScore scoreTerm="Par" value={4} />
                 </RadialCenter>
-                <RadialItem angle={-90}>
+                <AnimatedRadialItem angle={-90}>
                     <OuterScore scoreTerm="Eagle" value={2} />
-                </RadialItem>
-                <RadialItem angle={-45}>
+                </AnimatedRadialItem>
+                <AnimatedRadialItem fromAngle={-90} toAngle={-45}>
                     <OuterScore scoreTerm="Birdie" value={3} />
-                </RadialItem>
-                <RadialItem angle={0}>
+                </AnimatedRadialItem>
+                <AnimatedRadialItem fromAngle={-90} toAngle={0}>
                     <OuterScore scoreTerm="Bogie" value={5} />
-                </RadialItem>
-                <RadialItem angle={45}>
+                </AnimatedRadialItem>
+                <AnimatedRadialItem fromAngle={-90} toAngle={45}>
                     <OuterScore scoreTerm="D. Bogie" value={6} />
-                </RadialItem>
-                <RadialItem angle={90}>
+                </AnimatedRadialItem>
+                <AnimatedRadialItem fromAngle={-90} toAngle={90}>
                     <OuterScore scoreTerm="T. Bogie" value={7} />
-                </RadialItem>
+                </AnimatedRadialItem>
             </Radial>
         </ScoringWrapper>
     </ScoringRoot>

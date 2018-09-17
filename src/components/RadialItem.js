@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 
 const RadialItemWrapper = styled.div`
@@ -20,29 +20,41 @@ const RadialItemPositioned = styled.div`
     transform: rotate(${props => (props.angle ? `${props.angle * -1}deg` : "0deg")});
 `;
 
-const RadialItem = props => {
-    const { angle, itemSize, distance } = props;
-
-    let size;
-    switch (itemSize) {
-        case "small":
-            size = "25%";
-            break;
-        case "medium":
-            size = "50%";
-            break;
-        default:
-            size = "100%";
-            break;
+class RadialItem extends Component {
+    constructor(props) {
+        super(props);
     }
 
-    return (
-        <RadialItemWrapper angle={angle}>
-            <RadialItemPositioned angle={angle} size={size} distance={distance}>
-                {props.children}
-            </RadialItemPositioned>
-        </RadialItemWrapper>
-    );
-};
+    componentDidMount() {
+        if (this.props.rotateAnimation) {
+            this.props.rotateAnimation();
+        }
+    }
+
+    render() {
+        const { angle, itemSize, distance, children, style } = this.props;
+
+        let size;
+        switch (itemSize) {
+            case "small":
+                size = "25%";
+                break;
+            case "medium":
+                size = "50%";
+                break;
+            default:
+                size = "100%";
+                break;
+        }
+
+        return (
+            <RadialItemWrapper angle={angle} style={style}>
+                <RadialItemPositioned angle={angle} size={size} distance={distance}>
+                    {children}
+                </RadialItemPositioned>
+            </RadialItemWrapper>
+        );
+    }
+}
 
 export default RadialItem;

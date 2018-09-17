@@ -11,17 +11,13 @@ const createScoreAnimation = Target => {
             this.state = {
                 animateX: new Animated.Value(0),
                 animateY: new Animated.Value(0),
-                scale: new Animated.Value(1),
-                scoreEntered: false,
-                zIndex: 0
+                scale: new Animated.Value(1)
             };
 
             this.scoreAnimation = this.scoreAnimation.bind(this);
         }
 
         scoreAnimation() {
-            this.setState({ scoreEntered: true, zIndex: 1 });
-
             Animated.stagger(201, [
                 Animated.parallel([
                     Animated.timing(this.state.animateX, {
@@ -48,8 +44,7 @@ const createScoreAnimation = Target => {
             return (
                 <AnimatedTarget
                     style={{
-                        transform: [{ translateX: animateX }, { translateY: animateY }, { scale: scale }],
-                        zIndex: zIndex
+                        transform: [{ translateX: animateX }, { translateY: animateY }, { scale: scale }]
                     }}
                     scoreAnimation={this.scoreAnimation}
                     {...this.props}
